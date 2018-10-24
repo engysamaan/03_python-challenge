@@ -14,15 +14,19 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    mars = mongo.db.mars.find_one()
-    return render_template("index.html", mars = mars)
+    doc = " "
+    mars = mongo.db.collection.find()
+    for x in mars:
+       doc = x
+
+    print(doc)
+    return render_template("index.html", mars = doc)
 
 
 @app.route("/scrape")
 def scraper():
-    mars = mongo.db.mars
     mars_data = scrape_mars.scrape()
-    mars.update({}, mars_data, upsert=True)
+    mongo.db.collection.insert_one(mars_data)
     return redirect("/", code=302)
 
 
