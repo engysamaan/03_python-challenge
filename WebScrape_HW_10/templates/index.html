@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hot Finds</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -15,16 +18,70 @@
     <div class="jumbotron text-center">
       <h1>Mession to mars</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+     
+  </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Latest Mars News </h1>
+                <h4> {{mars.mars_news.title}} </h4> 
+                <p>{{mars.mars_news.paragraph}}</p>
+            </div>
+        </div>   
     </div>
 
-    <!-- Craigslist Listings -->
-    <div class="row" id="">
-      <div class="col-md-12">
-          <img src={{mars.jpl_img}} >
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <h1> Featured Mars Image </h1>
+                <img src="{{mars.jpl_img}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="weather-box">
+        <div class="col-md-4">
+            <h2> Current weather on Mars</h2>
+            <p>{{mars.mars_weather}} </p>
+        </div>
+    </div>
+
+
+
+    <div class="table">
+      <div class="col-md-6">
+        <h2> Mars Facts </h2>
+          <p>
+            {{mars.mars_facts|safe}}
+          </p>
       </div>
     </div>
+
+
+
+    <div class="img">
+      <div class="col-md-6 text-center">
+        <h2>Mars Hemispheres</h2>
+        
+            <img src="{{mars.hemisphere[0]['img_url']}}"alt="Cerberus Hemisphere Enhanced">
+            <h3>{{mars.hemisphere[0]["title"]}}</h3>
+
+            <img src="{{mars.hemisphere[1]['img_url']}}" alt="Schiaparelli Hemisphere Enhanced">
+            <h3>{{mars.hemisphere[1]["title"]}}</h3>
+
+        <div class="col-md-6">
+            <img src="{{mars.hemisphere[2]['img_url']}}" alt="Syrtis Major Hemisphere Enhanced">
+            <h3>{{mars.hemisphere[2]["title"]}}</h3>
+
+            <img src="{{mars.hemisphere[3]['img_url']}}" alt="Valles Marineris Hemisphere Enhanced">
+            <h3>{{mars.hemisphere[3]["title"]}}</h3>
+        </div>
+          
     
-    {{mars.mars_facts|safe}}
+      </div> 
+    </div>    
    
 
   </div>

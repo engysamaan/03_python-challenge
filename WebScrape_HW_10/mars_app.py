@@ -14,8 +14,11 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
+    ## creat doc as empty string to host the latest outcome 
     doc = " "
     mars = mongo.db.collection.find()
+
+    ## loop in mongo db to get the latest doc 
     for x in mars:
        doc = x
 
