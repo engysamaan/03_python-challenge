@@ -67,8 +67,7 @@ def scrape():
     df.columns = [" ","Value"]
     mars_facts_df = df
     mars_facts_df.columns = ["description", "Value"]
-    mars_facts_df.set_index(["description"])
-    mars_facts_htmltable = mars_facts_df.to_html()
+    mars_facts_htmltable = mars_facts_df.to_html(index= False)
     mars_facts_htmltable.replace("\n", "")
 
     ## insert the outcome to the dic
