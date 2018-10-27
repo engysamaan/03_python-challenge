@@ -64,7 +64,7 @@ def scrape():
 
     type(tables)
     df = tables[0]
-    df.columns = [" ","Value"]
+    #df.columns = [" ","Value"]
     mars_facts_df = df
     mars_facts_df.columns = ["description", "Value"]
     mars_facts_htmltable = mars_facts_df.to_html(index= False)
