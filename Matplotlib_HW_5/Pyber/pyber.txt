@@ -1,3 +1,0 @@
-# The urban have the hights rates in: rides , Avg fare and number of drivers.
-# West Angela is the top city in Total rides with 39 ride , while Garzaport has only 3 rides in Urban.
-# Liumouth has 2277 total drivers in urban while Newtonview has total 4.
